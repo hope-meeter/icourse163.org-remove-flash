@@ -20,10 +20,9 @@
         }
     }, 1000);
     function sendMessage(){
-        var unitId = getQueryVariable(window.location.href, "&", "cid");
         $.post("https://www.icourse163.org/web/j/courseBean.saveMocContentLearn.rpc?csrfKey=" + getQueryVariable(document.cookie, ";", " NTESSTUDYSI"),
                "dto=" + JSON.stringify({
-            unitId: unitId,
+            unitId: getQueryVariable(window.location.href, "&", "cid"),
             pageNum: 1,
             finished: true,
             contentType: 3
